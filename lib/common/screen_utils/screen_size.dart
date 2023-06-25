@@ -12,10 +12,10 @@ class ScreenSize {
   }
 }
 
-double useScreenHeight(double input) {
+double screenHeight(double input) {
   return (input / 812) * ScreenSize.screenHight;
 }
 
-double useScreenWidth(double input) {
+double screenWidth(double input) {
   return (input / 375) * ScreenSize.screenWidth;
 }
