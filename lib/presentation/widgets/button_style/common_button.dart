@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:smartapp/common/screen_utils/screen_size.dart';
 import 'package:smartapp/presentation/themes/app_colors.dart';
 
-Widget commonButton({required Function function, required String text}) {
+Widget commonButton(
+    {required function, required String text, required BuildContext context}) {
   return FilledButton(
-    onPressed: () {},
+    onPressed: () {
+      function();
+    },
     style: ButtonStyle(
         backgroundColor: const MaterialStatePropertyAll(AppColor.purplyBlue),
         padding: MaterialStatePropertyAll(

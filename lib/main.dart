@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:smartapp/presentation/journeys/gender.dart';
 import 'package:smartapp/presentation/journeys/notification.dart';
+import 'package:smartapp/presentation/widgets/user_registration/profile_icon_choice.dart';
 
 
 void main() => runApp(MyApp());
+
 
 
 class MyApp extends StatefulWidget {
@@ -26,20 +28,15 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
 
-      title: 'Flutter Demo',
+      title: 'HealHer SmartBand',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: UserWeight(),
+      home: ProfileChoice(),
     );
-        title: 'HealHer SmartBand',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
-        home: ActivitiesPage());
+        
 
   }
 }

@@ -2,8 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:smartapp/common/screen_utils/screen_size.dart';
 import 'package:smartapp/presentation/journeys/models/fitness_model.dart';
 import 'package:smartapp/presentation/themes/app_colors.dart';
+
+import '../../../common/animation_function/animation_nav.dart';
+import '../button_style/common_button.dart';
+import 'targets_page.dart';
 
 class ActivitiesPage extends StatefulWidget {
   const ActivitiesPage({super.key});
@@ -165,7 +170,17 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
             const SizedBox(
               height: 15,
             ),
-            DotIndicator(currentIndex: _currentIndex)
+            DotIndicator(currentIndex: _currentIndex),
+            SizedBox(
+              height: screenHeight(35),
+            ),
+          commonButton(
+                function: () => navigateWithAnimation(
+                    animationType: AnimationType.fade,
+                    context: context,
+                    pageClass: () => TargetsPage()),
+                text: "Continue",
+                context: context)
           ],
         ),
       ),
