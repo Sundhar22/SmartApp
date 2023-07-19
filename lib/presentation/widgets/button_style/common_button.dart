@@ -3,12 +3,10 @@ import 'package:smartapp/common/screen_utils/screen_size.dart';
 import 'package:smartapp/presentation/themes/app_colors.dart';
 
 Widget commonButton(
-    {required Function function,
-    required String text,
-    required BuildContext context}) {
+    {required function, required String text, required BuildContext context}) {
   return FilledButton(
     onPressed: () {
-      function;
+      function();
     },
     style: ButtonStyle(
         backgroundColor: const MaterialStatePropertyAll(AppColor.purplyBlue),

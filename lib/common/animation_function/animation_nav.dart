@@ -14,11 +14,13 @@ enum AnimationType {
   ripple,
 }
 
-void navigateWithAnimation({required BuildContext context, required Widget Function() pageClass,
+void navigateWithAnimation(
+    {required BuildContext context,
+    required Widget Function() pageClass,
     required AnimationType animationType}) {
-      
   PageRouteBuilder<dynamic> _getPageRoute(Widget Function() pageClass) {
     return PageRouteBuilder<dynamic>(
+      transitionDuration: Duration(milliseconds: 800),
       pageBuilder: (context, animation, secondaryAnimation) => pageClass(),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         switch (animationType) {

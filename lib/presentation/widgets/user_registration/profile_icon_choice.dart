@@ -172,10 +172,12 @@ class _ProfileChoiceState extends State<ProfileChoice> {
               height: screenHeight(50),
             ),
             commonButton(
-                function: () => navigateWithAnimation(
+                function: () {
+                  navigateWithAnimation(
                     animationType: AnimationType.fade,
                     context: context,
-                    pageClass: () => UserWeight()),
+                    pageClass: () => UserWeight());
+                },
                 text: "Continue",
                 context: context)
           ],
