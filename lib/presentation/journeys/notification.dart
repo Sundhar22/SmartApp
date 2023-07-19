@@ -3,14 +3,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:smartapp/presentation/themes/app_colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class notification extends StatefulWidget {
-  const notification({super.key});
+class NotificationScreen extends StatefulWidget {
+  const NotificationScreen({super.key});
 
   @override
-  State<notification> createState() => _notificationState();
+  State<NotificationScreen> createState() => _NotificationScreenState();
 }
 
-class _notificationState extends State<notification> {
+class _NotificationScreenState extends State<NotificationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,19 +56,17 @@ class _notificationState extends State<notification> {
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 20, left: 20),
-                child: Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Do you want to turn \n     on notification?",
-                        style: GoogleFonts.poppins(
-                            color: AppColor.black,
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Do you want to turn \n     on notification?",
+                      style: GoogleFonts.poppins(
+                          color: AppColor.black,
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
                 ),
               ),
               const SizedBox(
@@ -91,7 +89,7 @@ class _notificationState extends State<notification> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Container(height:25, width: 40,child: SvgPicture.asset("assets/icons/star.svg", color: AppColor.purplyBlue,)),
+                            SizedBox(height:25, width: 40,child: SvgPicture.asset("assets/icons/star.svg", color: AppColor.purplyBlue,)),
                             const SizedBox(
                               width: 10,
                             ),
@@ -105,7 +103,7 @@ class _notificationState extends State<notification> {
                           ],
                         ),
                       ),
-                      Divider(
+                    const  Divider(
                         color: AppColor.santaGrey,
                       ),
                       const SizedBox(
@@ -116,7 +114,7 @@ class _notificationState extends State<notification> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Container(height:25, width: 40,child: SvgPicture.asset("assets/icons/flame.svg", color: AppColor.purplyBlue,)),
+                            SizedBox(height:25, width: 40,child: SvgPicture.asset("assets/icons/flame.svg", color: AppColor.purplyBlue,)),
                             const SizedBox(
                               width: 10,
                             ),
@@ -130,7 +128,7 @@ class _notificationState extends State<notification> {
                           ],
                         ),
                       ),
-                      Divider(
+                     const Divider(
                         color: AppColor.santaGrey,
                       ),
                       const SizedBox(
@@ -141,7 +139,7 @@ class _notificationState extends State<notification> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Container(height:25, width: 40,child: SvgPicture.asset("assets/icons/heart.svg", color: AppColor.purplyBlue,)),
+                            SizedBox(height:25, width: 40,child: SvgPicture.asset("assets/icons/heart.svg", color: AppColor.purplyBlue,)),
                             const SizedBox(
                               width: 10,
                             ),
@@ -170,7 +168,7 @@ class _notificationState extends State<notification> {
                 width: 250,
                 child: ElevatedButton(
                     onPressed: () {},
-                    child: Text(
+                      child: Text(
                       "Allow",
                       style: GoogleFonts.poppins(color: AppColor.white, fontSize: 15, fontWeight: FontWeight.bold),
                     ),
@@ -178,7 +176,8 @@ class _notificationState extends State<notification> {
                       backgroundColor: AppColor.purplyBlue,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15)),
-                    )),
+                    )
+                  ),
               )
             ],
           ),
