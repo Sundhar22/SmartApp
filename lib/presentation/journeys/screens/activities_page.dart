@@ -5,14 +5,14 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:smartapp/presentation/journeys/models/fitness_model.dart';
 import 'package:smartapp/presentation/themes/app_colors.dart';
 
-class CarouselPage extends StatefulWidget {
-  const CarouselPage({super.key});
+class ActivitiesPage extends StatefulWidget {
+  const ActivitiesPage({super.key});
 
   @override
-  _CarouselPageState createState() => _CarouselPageState();
+  _ActivitiesPageState createState() => _ActivitiesPageState();
 }
 
-class _CarouselPageState extends State<CarouselPage> {
+class _ActivitiesPageState extends State<ActivitiesPage> {
   final fitnessLevel = [
     FitnessLevel(
         level: 0,
