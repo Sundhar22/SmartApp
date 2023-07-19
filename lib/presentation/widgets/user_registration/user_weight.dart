@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:horizontal_picker/horizontal_picker.dart';
 import 'package:smartapp/common/screen_utils/screen_size.dart';
 import 'package:smartapp/presentation/widgets/button_style/common_button.dart';
+import 'package:smartapp/presentation/widgets/user_registration/activities_page.dart';
 
+import '../../../common/animation_function/animation_nav.dart';
 import '../../themes/app_colors.dart';
 
 class UserWeight extends StatefulWidget {
@@ -171,7 +173,13 @@ class _UserWeightState extends State<UserWeight> {
             SizedBox(
               height: screenHeight(50),
             ),
-            commonButton(function: () {}, text: "Continue")
+          commonButton(
+                function: () => navigateWithAnimation(
+                    animationType: AnimationType.fade,
+                    context: context,
+                    pageClass: () => ActivitiesPage()),
+                text: "Continue",
+                context: context)
           ],
         ),
       ),
