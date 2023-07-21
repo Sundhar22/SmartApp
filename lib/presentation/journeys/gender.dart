@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smartapp/presentation/themes/app_colors.dart';
 
@@ -19,7 +18,7 @@ class _SelectGenderState extends State<SelectGender> {
           color: Colors.white,
           child: Column(
             children: [
-              Row(
+              const Row(
                 children: [
                   SizedBox(
                     width: 10,
@@ -84,7 +83,7 @@ class _SelectGenderState extends State<SelectGender> {
                         height: 200,
                         width: 150,
                         alignment: Alignment.bottomCenter,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                             image: DecorationImage(
                                 image: AssetImage("assets/images/male.jpg"))),
                         child: Text("Male", style: GoogleFonts.poppins(color: AppColor.purplyBlue, fontSize:17 ),),
@@ -99,7 +98,7 @@ class _SelectGenderState extends State<SelectGender> {
                         height: 200,
                         width: 150,
                         alignment: Alignment.bottomCenter,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                             image: DecorationImage(
                                 image: AssetImage("assets/images/female.jpg"))),
                         child: Text("Female", style: GoogleFonts.poppins(color: AppColor.purplyBlue, fontSize:17 ),),
