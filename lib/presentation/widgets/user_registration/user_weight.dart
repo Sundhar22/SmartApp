@@ -52,135 +52,140 @@ class _UserWeightState extends State<UserWeight> {
       ),
       body: SizedBox(
         width: double.infinity,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: screenHeight(280),
-              child: Image.asset(
-                "assets/png/weight.png",
-                color: AppColor.purplyBlue,
-              ),
-            ),
-            Text(
-              "STEP 1/7",
-              style: TextStyle(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: screenHeight(280),
+                child: Image.asset(
+                  "assets/png/weight.png",
                   color: AppColor.purplyBlue,
-                  fontWeight: FontWeight.bold,
-                  fontSize: screenHeight(15)),
-            ),
-            Text(
-              "What is your weight?",
-              style: TextStyle(
-                  color: AppColor.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: screenHeight(25)),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: screenHeight(30)),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  FilledButton(
-                      style: ButtonStyle(
-                        padding: MaterialStatePropertyAll(EdgeInsets.symmetric(
-                            vertical: screenHeight(12),
-                            horizontal: screenWidth(30))),
-                        side: MaterialStatePropertyAll(BorderSide(
-                            width: screenWidth(1),
-                            color: Colors.grey.shade300)),
-                        backgroundColor: MaterialStatePropertyAll(
-                            kg == false ? AppColor.purplyBlue : Colors.white),
-                        shape: MaterialStatePropertyAll(
-                          ContinuousRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                        ),
-                      ),
-                      onPressed: () {
-                        setState(() {
-                          kg = false;
-                        });
-                      },
-                      child: Text(
-                        "lbs",
-                        style: TextStyle(
-                            color: kg == false ? AppColor.white : Colors.black,
-                            fontSize: screenHeight(20)),
-                      )),
-                  SizedBox(
-                    width: screenWidth(15),
-                  ),
-                  FilledButton(
-                      style: ButtonStyle(
-                        padding: MaterialStatePropertyAll(EdgeInsets.symmetric(
-                            vertical: screenHeight(12),
-                            horizontal: screenWidth(30))),
-                        side: MaterialStatePropertyAll(BorderSide(
-                            width: screenWidth(1),
-                            color: Colors.grey.shade300)),
-                        backgroundColor: MaterialStatePropertyAll(
-                            kg == true ? AppColor.purplyBlue : Colors.white),
-                        shape: MaterialStatePropertyAll(
-                          ContinuousRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                        ),
-                      ),
-                      onPressed: () {
-                        setState(() {
-                          kg = true;
-                        });
-                      },
-                      child: Text(
-                        "Kg",
-                        style: TextStyle(
-                            color: kg == true ? AppColor.white : Colors.black,
-                            fontSize: screenHeight(20)),
-                      )),
-                ],
+                ),
               ),
-            ),
-            Text(kg ? "$weight kg" : "$weight lbs",
+              Text(
+                "STEP 1/7",
                 style: TextStyle(
-                    fontWeight: FontWeight.w800, fontSize: screenHeight(20))),
-            SizedBox(
-              height: screenHeight(15),
-            ),
-            Container(
-              margin: EdgeInsets.all(screenWidth(1)),
-              decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(100)),
-              child: HorizontalPicker(
-                minValue: 10,
-                maxValue: 200,
-                divisions: 600,
-                suffix: kg ? " kg" : " lbs",
-                showCursor: false,
-                backgroundColor: Colors.grey.shade900,
-                activeItemTextColor: AppColor.white,
-                passiveItemsTextColor: AppColor.purplyBlue,
-                onChanged: (value) {
-                  setState(() {
-                    weight = value;
-                  });
-                },
-                height: 100,
-                initialPosition: InitialPosition.center,
+                    color: AppColor.purplyBlue,
+                    fontWeight: FontWeight.bold,
+                    fontSize: screenHeight(15)),
               ),
-            ),
-            SizedBox(
-              height: screenHeight(50),
-            ),
-          commonButton(
-                function: () => navigateWithAnimation(
-                    animationType: AnimationType.fade,
-                    context: context,
-                    pageClass: () => ActivitiesPage()),
-                text: "Continue",
-                context: context)
-          ],
+              Text(
+                "What is your weight?",
+                style: TextStyle(
+                    color: AppColor.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: screenHeight(25)),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: screenHeight(30)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    FilledButton(
+                        style: ButtonStyle(
+                          padding: MaterialStatePropertyAll(
+                              EdgeInsets.symmetric(
+                                  vertical: screenHeight(12),
+                                  horizontal: screenWidth(30))),
+                          side: MaterialStatePropertyAll(BorderSide(
+                              width: screenWidth(1),
+                              color: Colors.grey.shade300)),
+                          backgroundColor: MaterialStatePropertyAll(
+                              kg == false ? AppColor.purplyBlue : Colors.white),
+                          shape: MaterialStatePropertyAll(
+                            ContinuousRectangleBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                          ),
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            kg = false;
+                          });
+                        },
+                        child: Text(
+                          "lbs",
+                          style: TextStyle(
+                              color:
+                                  kg == false ? AppColor.white : Colors.black,
+                              fontSize: screenHeight(20)),
+                        )),
+                    SizedBox(
+                      width: screenWidth(15),
+                    ),
+                    FilledButton(
+                        style: ButtonStyle(
+                          padding: MaterialStatePropertyAll(
+                              EdgeInsets.symmetric(
+                                  vertical: screenHeight(12),
+                                  horizontal: screenWidth(30))),
+                          side: MaterialStatePropertyAll(BorderSide(
+                              width: screenWidth(1),
+                              color: Colors.grey.shade300)),
+                          backgroundColor: MaterialStatePropertyAll(
+                              kg == true ? AppColor.purplyBlue : Colors.white),
+                          shape: MaterialStatePropertyAll(
+                            ContinuousRectangleBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                          ),
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            kg = true;
+                          });
+                        },
+                        child: Text(
+                          "Kg",
+                          style: TextStyle(
+                              color: kg == true ? AppColor.white : Colors.black,
+                              fontSize: screenHeight(20)),
+                        )),
+                  ],
+                ),
+              ),
+              Text(kg ? "$weight kg" : "$weight lbs",
+                  style: TextStyle(
+                      fontWeight: FontWeight.w800, fontSize: screenHeight(20))),
+              SizedBox(
+                height: screenHeight(15),
+              ),
+              Container(
+                margin: EdgeInsets.all(screenWidth(1)),
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(100)),
+                child: HorizontalPicker(
+                  minValue: 10,
+                  maxValue: 200,
+                  divisions: 600,
+                  suffix: kg ? " kg" : " lbs",
+                  showCursor: false,
+                  backgroundColor: Colors.grey.shade900,
+                  activeItemTextColor: AppColor.white,
+                  passiveItemsTextColor: AppColor.purplyBlue,
+                  onChanged: (value) {
+                    setState(() {
+                      weight = value;
+                    });
+                  },
+                  height: 100,
+                  initialPosition: InitialPosition.center,
+                ),
+              ),
+              SizedBox(
+                height: screenHeight(50),
+              ),
+              commonButton(
+                  function: () => navigateWithAnimation(
+                      animationType: AnimationType.fade,
+                      context: context,
+                      pageClass: () => ActivitiesPage()),
+                  text: "Continue",
+                  context: context)
+            ],
+          ),
         ),
       ),
     );

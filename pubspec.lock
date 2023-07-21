@@ -73,6 +73,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
+  dotted_border:
+    dependency: "direct main"
+    description:
+      name: dotted_border
+      sha256: "07a5c5e8d4e6e992279e190e0352be8faa5b8f96d81c77a78b2d42f060279840"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0+3"
+  equatable:
+    dependency: transitive
+    description:
+      name: equatable
+      sha256: c2b87cb7756efdf69892005af546c56c0b5037f54d2a88269b4f347a505e3ca2
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.5"
   fake_async:
     dependency: transitive
     description:
@@ -97,6 +113,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.1.4"
+  fl_chart:
+    dependency: "direct main"
+    description:
+      name: fl_chart
+      sha256: c1e26c7e48496be85104c16c040950b0436674cdf0737f3f6e95511b2529b592
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.63.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -123,7 +147,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-
   google_fonts:
     dependency: "direct main"
     description:
@@ -132,6 +155,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.1.0"
+  horizontal_picker:
+    dependency: "direct main"
+    description:
+      name: horizontal_picker
+      sha256: "0b7303c353d5b824046fd23f2f87bf9c08cc21725a3bdca2613b95843db836d4"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.0"
   http:
     dependency: transitive
     description:
@@ -148,16 +179,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
-
-  horizontal_picker:
-    dependency: "direct main"
-    description:
-      name: horizontal_picker
-      sha256: "0b7303c353d5b824046fd23f2f87bf9c08cc21725a3bdca2613b95843db836d4"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.2.0"
-
   js:
     dependency: transitive
     description:
@@ -206,7 +227,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.3"
-
+  path_drawing:
+    dependency: transitive
+    description:
+      name: path_drawing
+      sha256: bbb1934c0cbb03091af082a6389ca2080345291ef07a5fa6d6e078ba8682f977
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
   path_parsing:
     dependency: transitive
     description:
@@ -263,6 +291,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.7"
+  percent_indicator:
+    dependency: "direct main"
+    description:
+      name: percent_indicator
+      sha256: c37099ad833a883c9d71782321cb65c3a848c21b6939b6185f0ff6640d05814c
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.2.3"
   petitparser:
     dependency: transitive
     description:
@@ -295,7 +331,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.2.4"
-
   scroll_snap_list:
     dependency: "direct main"
     description:
@@ -304,7 +339,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.9.1"
-
   sky_engine:
     dependency: transitive
     description: flutter
