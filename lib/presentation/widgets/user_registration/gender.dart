@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smartapp/common/screen_utils/screen_size.dart';
 import 'package:smartapp/presentation/themes/app_colors.dart';
@@ -7,7 +6,6 @@ import 'package:smartapp/presentation/widgets/user_registration/profile_icon_cho
 
 import '../../../common/animation_function/animation_nav.dart';
 import '../button_style/common_button.dart';
-import 'user_height.dart';
 
 class SelectGender extends StatefulWidget {
   const SelectGender({super.key});

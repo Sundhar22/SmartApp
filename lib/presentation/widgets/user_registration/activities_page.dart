@@ -85,7 +85,7 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
                 padding: const EdgeInsets.symmetric(vertical: 0.5),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: AppColor.lightPurplrBlue,
+                    color: AppColor.lightPurpleBlue,
                     borderRadius: BorderRadius.circular(20),
                   ),
                   width: 350,
@@ -174,7 +174,7 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
             SizedBox(
               height: screenHeight(35),
             ),
-          commonButton(
+            commonButton(
                 function: () => navigateWithAnimation(
                     animationType: AnimationType.fade,
                     context: context,
