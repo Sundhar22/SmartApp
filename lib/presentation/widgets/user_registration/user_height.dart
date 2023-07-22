@@ -1,26 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:horizontal_picker/horizontal_picker.dart';
-import 'package:smartapp/common/screen_utils/screen_size.dart';
-import 'package:smartapp/presentation/widgets/button_style/common_button.dart';
-import 'package:smartapp/presentation/widgets/user_registration/activities_page.dart';
-import 'package:smartapp/presentation/widgets/user_registration/user_height.dart';
 
 import '../../../common/animation_function/animation_nav.dart';
+import '../../../common/screen_utils/screen_size.dart';
 import '../../themes/app_colors.dart';
+import '../button_style/common_button.dart';
+import 'activities_page.dart';
 
-class UserWeight extends StatefulWidget {
-  const UserWeight({super.key});
+class UserHeight extends StatefulWidget {
+  const UserHeight({super.key});
 
   @override
-  State<UserWeight> createState() => _UserWeightState();
+  State<UserHeight> createState() => _UserHeightState();
 }
 
-class _UserWeightState extends State<UserWeight> {
+class _UserHeightState extends State<UserHeight> {
   List<bool> isSelected = List.generate(3, (_) => false);
 
-  bool kg = true;
+  bool cm = true;
 
-  double weight = 0.0;
+  double height = 0.0;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +43,7 @@ class _UserWeightState extends State<UserWeight> {
                   ))),
         ],
         centerTitle: true,
-        title: Text("user weight",
+        title: Text("user height",
             style: TextStyle(
               fontSize: screenHeight(20),
               fontWeight: FontWeight.bold,
@@ -59,8 +58,7 @@ class _UserWeightState extends State<UserWeight> {
             SizedBox(
               height: screenHeight(280),
               child: Image.asset(
-                "assets/png/weight.png",
-                color: AppColor.purplyBlue,
+                "assets/png/height.png",
               ),
             ),
             Text(
@@ -71,7 +69,7 @@ class _UserWeightState extends State<UserWeight> {
                   fontSize: screenHeight(15)),
             ),
             Text(
-              "What is your weight?",
+              "What is your height?",
               style: TextStyle(
                   color: AppColor.black,
                   fontWeight: FontWeight.bold,
@@ -92,7 +90,7 @@ class _UserWeightState extends State<UserWeight> {
                             width: screenWidth(1),
                             color: Colors.grey.shade300)),
                         backgroundColor: MaterialStatePropertyAll(
-                            kg == false ? AppColor.purplyBlue : Colors.white),
+                            cm == false ? AppColor.purplyBlue : Colors.white),
                         shape: MaterialStatePropertyAll(
                           ContinuousRectangleBorder(
                             borderRadius: BorderRadius.circular(15),
@@ -101,13 +99,13 @@ class _UserWeightState extends State<UserWeight> {
                       ),
                       onPressed: () {
                         setState(() {
-                          kg = false;
+                          cm = false;
                         });
                       },
                       child: Text(
-                        "lbs",
+                        "inch",
                         style: TextStyle(
-                            color: kg == false ? AppColor.white : Colors.black,
+                            color: cm == false ? AppColor.white : Colors.black,
                             fontSize: screenHeight(20)),
                       )),
                   SizedBox(
@@ -122,7 +120,7 @@ class _UserWeightState extends State<UserWeight> {
                             width: screenWidth(1),
                             color: Colors.grey.shade300)),
                         backgroundColor: MaterialStatePropertyAll(
-                            kg == true ? AppColor.purplyBlue : Colors.white),
+                            cm == true ? AppColor.purplyBlue : Colors.white),
                         shape: MaterialStatePropertyAll(
                           ContinuousRectangleBorder(
                             borderRadius: BorderRadius.circular(15),
@@ -131,19 +129,19 @@ class _UserWeightState extends State<UserWeight> {
                       ),
                       onPressed: () {
                         setState(() {
-                          kg = true;
+                          cm = true;
                         });
                       },
                       child: Text(
-                        "Kg",
+                        "cm",
                         style: TextStyle(
-                            color: kg == true ? AppColor.white : Colors.black,
+                            color: cm == true ? AppColor.white : Colors.black,
                             fontSize: screenHeight(20)),
                       )),
                 ],
               ),
             ),
-            Text(kg ? "$weight kg" : "$weight lbs",
+            Text(cm ? "$height cm" : "$height inch",
                 style: TextStyle(
                     fontWeight: FontWeight.w800, fontSize: screenHeight(20))),
             SizedBox(
@@ -157,14 +155,14 @@ class _UserWeightState extends State<UserWeight> {
                 minValue: 10,
                 maxValue: 200,
                 divisions: 600,
-                suffix: kg ? " kg" : " lbs",
+                suffix: cm ? " cm" : " inch",
                 showCursor: false,
                 backgroundColor: Colors.grey.shade900,
                 activeItemTextColor: AppColor.white,
                 passiveItemsTextColor: AppColor.purplyBlue,
                 onChanged: (value) {
                   setState(() {
-                    weight = value;
+                    height = value;
                   });
                 },
                 height: 100,
@@ -174,11 +172,11 @@ class _UserWeightState extends State<UserWeight> {
             SizedBox(
               height: screenHeight(50),
             ),
-          commonButton(
+            commonButton(
                 function: () => navigateWithAnimation(
                     animationType: AnimationType.fade,
                     context: context,
-                    pageClass: () => UserHeight()),
+                    pageClass: () => ActivitiesPage()),
                 text: "Continue",
                 context: context)
           ],
