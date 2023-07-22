@@ -1,7 +1,11 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:smartapp/presentation/widgets/user_registration/notification.dart';
 import 'package:smartapp/presentation/themes/app_colors.dart';
+import 'package:smartapp/presentation/widgets/button_style/common_button.dart';
+
+import '../../../common/animation_function/animation_nav.dart';
 
 class TargetsPage extends StatefulWidget {
   TargetsPage({super.key});
@@ -97,27 +101,34 @@ class _TargetsPageState extends State<TargetsPage> {
                 print(widget.selectedLevels);
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Container(
-                width: MediaQuery.of(context).size.width * 0.8,
-                height: 60,
-                decoration: BoxDecoration(
-                  color: AppColor.purplyBlue,
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: const Center(
-                  child: Text(
-                    'select',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                    ),
-                  ),
-                )),
-            SizedBox(
+            // Container(
+            //     width: MediaQuery.of(context).size.width * 0.8,
+            //     height: 60,
+            //     decoration: BoxDecoration(
+            //       color: AppColor.purplyBlue,
+            //       borderRadius: BorderRadius.circular(15),
+            //     ),
+            //     child: const Center(
+            //       child: Text(
+            //         'select',
+            //         textAlign: TextAlign.center,
+            //         style: TextStyle(
+            //           color: Colors.white,
+            //           fontSize: 18,
+            //         ),
+            //       ),
+            //     )),
+            commonButton(
+                function: () => navigateWithAnimation(
+                    animationType: AnimationType.fade,
+                    context: context,
+                    pageClass: () => const NotificationScreen()),
+                text: "select",
+                context: context),
+            const SizedBox(
               height: 20,
             )
           ],

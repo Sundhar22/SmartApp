@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:smartapp/common/screen_utils/screen_size.dart';
 import 'package:smartapp/presentation/themes/app_colors.dart';
+import 'package:smartapp/presentation/widgets/user_registration/profile_icon_choice.dart';
+
+import '../../../common/animation_function/animation_nav.dart';
+import '../button_style/common_button.dart';
+import 'user_height.dart';
 
 class SelectGender extends StatefulWidget {
   const SelectGender({super.key});
@@ -13,13 +19,14 @@ class SelectGender extends StatefulWidget {
 class _SelectGenderState extends State<SelectGender> {
   @override
   Widget build(BuildContext context) {
+    ScreenSize().init(context);
     return Scaffold(
       body: SafeArea(
         child: Container(
           color: Colors.white,
           child: Column(
             children: [
-              Row(
+              const Row(
                 children: [
                   SizedBox(
                     width: 10,
@@ -79,30 +86,38 @@ class _SelectGenderState extends State<SelectGender> {
                     //   ),
                     // ),
                     GestureDetector(
-                      onTap: (){},
+                      onTap: () {},
                       child: Container(
                         height: 200,
                         width: 150,
                         alignment: Alignment.bottomCenter,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                             image: DecorationImage(
                                 image: AssetImage("assets/images/male.jpg"))),
-                        child: Text("Male", style: GoogleFonts.poppins(color: AppColor.purplyBlue, fontSize:17 ),),
+                        child: Text(
+                          "Male",
+                          style: GoogleFonts.poppins(
+                              color: AppColor.purplyBlue, fontSize: 17),
+                        ),
                       ),
                     ),
                     const SizedBox(
                       width: 30,
                     ),
                     GestureDetector(
-                      onTap: (){},
+                      onTap: () {},
                       child: Container(
                         height: 200,
                         width: 150,
                         alignment: Alignment.bottomCenter,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                             image: DecorationImage(
                                 image: AssetImage("assets/images/female.jpg"))),
-                        child: Text("Female", style: GoogleFonts.poppins(color: AppColor.purplyBlue, fontSize:17 ),),
+                        child: Text(
+                          "Female",
+                          style: GoogleFonts.poppins(
+                              color: AppColor.purplyBlue, fontSize: 17),
+                        ),
                       ),
                     ),
                     // Card(
@@ -137,24 +152,13 @@ class _SelectGenderState extends State<SelectGender> {
               const SizedBox(
                 height: 150,
               ),
-              SizedBox(
-                height: 50,
-                width: 250,
-                child: ElevatedButton(
-                    onPressed: () {},
-                    child: Text(
-                      "Continue",
-                      style: GoogleFonts.poppins(
-                          color: AppColor.white,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColor.purplyBlue,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15)),
-                    )),
-              ),
+              commonButton(
+                  function: () => navigateWithAnimation(
+                      animationType: AnimationType.fade,
+                      context: context,
+                      pageClass: () => const ProfileChoice()),
+                  text: "Continue",
+                  context: context),
               const SizedBox(
                 height: 15,
               ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:scroll_snap_list/scroll_snap_list.dart';
-import 'package:smartapp/presentation/widgets/user_registration/activities_page.dart';
 import 'package:smartapp/presentation/widgets/user_registration/user_weight.dart';
 import '../../../common/animation_function/animation_nav.dart';
 import '../../../common/screen_utils/screen_size.dart';
@@ -8,7 +7,7 @@ import '../../themes/app_colors.dart';
 import '../button_style/common_button.dart';
 
 class ProfileChoice extends StatefulWidget {
-  ProfileChoice({super.key});
+  const  ProfileChoice({super.key});
 
   @override
   State<ProfileChoice> createState() => _ProfileChoiceState();
